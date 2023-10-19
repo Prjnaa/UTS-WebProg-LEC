@@ -1,0 +1,15 @@
+.radio-card {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card {
+    border: 1.5px solid #111827;
+    width: 5rem;
+    transition: border-color 0.3s;
+}
+
+input[type="radio"]:checked + .card {
+    border-color: #d1d5db;
+}

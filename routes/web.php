@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +16,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('main');
+Route::get('/', [MenuController::class, 'index']);
+Route::get('/menu', [MenuController::class, 'index']);
+
+Route::get('/cart', function() {
+    return view('cart');
 });
+
+Route::post('/add-to-cart/{menu}', [CartController::class, 'addToCart'])->name('addToCart');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

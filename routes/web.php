@@ -3,6 +3,7 @@
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MenuController::class, 'index']);
-Route::get('/menu', [MenuController::class, 'index']);
+Route::get('/', [MenuController::class, 'index'])->name('home');
 
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 

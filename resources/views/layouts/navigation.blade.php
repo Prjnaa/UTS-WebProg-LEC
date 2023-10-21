@@ -8,7 +8,7 @@
                     <a href="{{ route('home') }}" class="flex items-center">
                         <x-application-logo-sm class="block w-auto fill-current text-gray-800 dark:text-gray-200" />
                         <div class="text-white ml-3 font-semibold text-lg">
-                            
+                            IFood
                         </div>
                     </a>
                 </div>
@@ -16,9 +16,11 @@
                 <!-- Navigation Links -->
                 @if (Auth::check() && Auth::user()->type === 'admin')
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                            {{ __('Dashboard') }}
-                        </x-nav-link>
+                        @if (Route::currentRouteName() !== 'dashboard' && request()->url() !== route('dashboard'))
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-nav-link>
+                        @endif
                     </div>
                 @endif
             </div>

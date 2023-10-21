@@ -34,8 +34,8 @@
                         </tr>
                     @endforeach
                 </tbody>
-            </table>   
-        </div> 
+            </table>
+        </div
         @else
             <p class=" text-center m-10 text-xl">Your cart is empty</p>
         @endif

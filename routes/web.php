@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\ProfileController;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +23,20 @@ Route::get('/', [MenuController::class, 'index'])->name('home');
 
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 
+Route::get('/menu-create', [MenuController::class, 'create'])->name('menu.create');
+
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+->middleware(['auth', 'verified', 'admin'])
+->name('dashboard');
+
 Route::post('/add-to-cart/{menu}', [CartController::class, 'addToCart'])->name('addToCart');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::post('/menu-create', [MenuController::class, 'store'])->name('menu.store');
+
+Route::put('/dashboard/update/{menu}', [MenuController::class, 'update'])->name('menu.update');
+
+Route::delete('/dashboard/delete/{menu}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

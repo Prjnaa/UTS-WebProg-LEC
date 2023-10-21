@@ -7,12 +7,12 @@
                     <div>
                         <h2 class="font-bold text-lg text-slate-800 leading-3 pt-2">{{ $menu->menu_name }}</h2>
                         <span class=" text-xs leading-3 text-gray-500">#{{ $menu->menu_cat }}</span>
-                        <div id="price" class="font-semibold mb-1">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+                        <div id="price" class="font-semibold mb-1 text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
                         <p class="flex leading-3 text-xs font-light text-gray-500 absolute">{{ Str::limit($menu->menu_desc, 75, '...' ) }} </p>
                     </div>
                     <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class=" mt-12 pt-1">
                         @csrf
-                        <button type="submit" class="text-xs">+ Add to Cart</button>
+                        <button type="submit" class=" text-xs text-slate-800 hover:underline hover:scale-105 transition">+ Add to Cart</button>
                     </form>
                 </div>
             </div>

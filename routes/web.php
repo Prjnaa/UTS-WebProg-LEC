@@ -19,9 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [MenuController::class, 'index']);
 Route::get('/menu', [MenuController::class, 'index']);
 
-Route::get('/cart', function() {
-    return view('cart');
-});
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart');
 
 Route::post('/add-to-cart/{menu}', [CartController::class, 'addToCart'])->name('addToCart');
 

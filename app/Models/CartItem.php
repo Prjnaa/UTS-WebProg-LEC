@@ -14,4 +14,9 @@ class CartItem extends Model
         'cart_id',
         'qty'
     ];
+
+    public function menu() {
+        return $this->belongsTo(Menu::class, 'menu_id');
+    }
+
 }

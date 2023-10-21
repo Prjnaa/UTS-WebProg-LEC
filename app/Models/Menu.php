@@ -16,4 +16,5 @@ class Menu extends Model
         'menu_cat',
         'menu_img_path'
     ];
+
 }

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="text-xl text-gray-700 uppercase bg-gray-50">
+        <div class="text-xl text-gray-700 uppercase">
         Dashboard
         </div>
     </x-slot>
@@ -55,11 +55,11 @@
                                 <p>{{ $menu->price }}</p>
                             </td>
                             <td class="px-6 py-4 flex">
-                                <!-- Add an Edit button to switch to edit mode -->
+                                <!-- Edit button -->
                                 <button type="button"
-                                    class="bg-blue-700 hover:scale-105 hover:bg-blue-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200"
+                                    class="bg-blue-700 hover:scale-105 hover:bg-blue-950 px-3 py-1 ml-3 rounded-md text-white transition duration-200"
                                     onclick="toggleEdit({{ $menu->id }})">Edit</button>
-                                <!-- Add a Delete button -->
+                                <!-- Delete button -->
                                 <form method="POST" action="{{ route('menu.destroy', $menu->id) }}">
                                     @csrf
                                     @method('DELETE')
@@ -68,9 +68,9 @@
                                 </form>
                             </td>
                         </tr>
-                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-300">
+                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-200">
                             <td colspan="6" class="px-5 py-4">
-                                <div class="text-center text-xl font-semibold text-gray-300">
+                                <div class="text-center text-xl font-semibold text-gray-700">
                                     Edit
                                 </div>
                                 <form method="post" action="{{ route('menu.update', $menu->id) }}">
@@ -84,7 +84,7 @@
                                         <x-text-input type="text" name="menu_cat" value="{{ $menu->menu_cat }}"
                                             class="form-input block mt-1 w-full h-8" />
                                         <x-input-label>Description</x-input-label>
-                                        <textarea name="menu_desc" class="w-full h-40 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
+                                        <textarea name="menu_desc" class="w-full h-40 border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
                                         <x-input-label>Price</x-input-label>
                                         <x-text-input type="text" name="price" value="{{ $menu->price }}"
                                             class="w-full" />

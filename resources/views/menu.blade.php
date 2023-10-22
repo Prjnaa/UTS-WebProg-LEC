@@ -11,7 +11,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased bg-gray-300 ">
+    <body class="font-sans antialiased  bg-gray-200">
         <section class=" sticky top-0 z-10">
             @include('layouts.navigation')
         </section>
@@ -29,13 +29,13 @@
                             <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
                             <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
                         </div>
-                        <div x-data="{ showModal: (document.cookie.includes('modal=show')) ? true : false }">
+                        <div x-data="{ showModal : false }">
                             <!-- Modal Button -->
-                            <button @click="showModal = true; document.cookie = 'modal=show'" type="button" class="text-xs text-slate-800 hover:underline hover:scale-105 transition mt-2">
+                            <button @click="showModal = !showModal" type="button" class="text-xs text-slate-800 hover:underline hover:scale-105 transition mt-2">
                                 Show More...
                             </button>
                             <!-- Modal Background and Content -->
-                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 py-24 bg-black bg-opacity-60 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 translate-y-1"@keydown.escape.window="showModal = false">
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 py-24 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 translate-y-1"@keydown.escape.window="showModal = false">
                                 <div x-show="showModal" class="bg-white rounded-xl md:shadow-2xl mx-5 w-full h-full md:mx-0 md:w-1/2 lg:w-2/5 lg:h-60 md:h-full overflow-hidden" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                     <div class="flex flex-col">
                                         <div class="flex flex-col lg:flex-row relative">

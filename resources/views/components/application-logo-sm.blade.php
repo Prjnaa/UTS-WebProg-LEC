@@ -1,1 +1,1 @@
-<img src="{{ asset('images/logo.png') }}" alt="Logo" class=" antialiased h-16">
+<img src="storage/images/logo.png" alt="Logo" class=" antialiased h-16">

@@ -53,14 +53,14 @@
             <div class="flex gap-10">
                 <label class="radio-card">
                     <input type="radio" name="gender" id="gender-male" value="M" class="hidden">
-                    <div class="card text-center rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
-                        <span class="font-medium text-lg text-gray-700 dark:text-gray-300">Male</span>
+                    <div class="card text-center rounded-md border-gray-300">
+                        <span class="font-medium text-lg text-gray-700">Male</span>
                     </div>
                 </label>
                 <label class="radio-card">
                     <input type="radio" name="gender" id="gender-female" value="F" class="hidden">
-                    <div class="card text-center rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300">
-                        <span class="font-medium text-lg text-gray-700 dark:text-gray-300">Female</span>
+                    <div class="card text-center rounded-md border-gray-300">
+                        <span class="font-medium text-lg text-gray-700">Female</span>
                     </div>
                 </label>
             </div>
@@ -74,7 +74,7 @@
         </div>
 
         <div class="flex items-center justify-end mt-10">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
+            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>
 

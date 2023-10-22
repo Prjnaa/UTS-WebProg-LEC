@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Menu;
+use App\Models\CartItem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+
 
 class CartController extends Controller
 {
@@ -36,11 +38,17 @@ class CartController extends Controller
 
         return redirect()->back()->with('success', 'Item added to cart successfully.');
     }
+    public function deleteCartItem(CartItem $cartItem)
+    {
+        $cartItem->delete();
+    
+        return redirect()->route('cart')->with('success', 'Item removed from the cart.');
+    }
 
     public function showCart()
     {
         $cart = Cart::with('cartItems.menu')->where('user_id', auth()->user()->id)->first();
-
+    
         $cartItems = $cart->cartItems->map(function ($item) {
             return [
                 'item_name' => $item->menu->menu_name,
@@ -49,9 +57,14 @@ class CartController extends Controller
                 'item_desc' => $item->menu->menu_desc,
                 'item_img' => $item->menu->menu_img_path,
                 'qty' => $item->qty,
+                'total_item_price' => $item->menu->price * $item->qty,
+                'cartItem' => $item,
             ];
         });
-
-        return view('cart', compact('cartItems'));
+    
+        $totalPrice = $cartItems->sum('total_item_price');
+    
+        return view('cart', compact('cartItems', 'totalPrice'));
     }
-}
+    
+    }

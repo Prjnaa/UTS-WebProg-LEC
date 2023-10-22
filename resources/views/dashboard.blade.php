@@ -1,6 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <div class="text-xl text-gray-700 uppercase bg-gray-50">
         Dashboard
+        </div>
     </x-slot>
     <div class="text-center">
         <form method="get" action="{{ route('menu.create') }}">
@@ -11,8 +13,8 @@
     </div>
     @if (count($menus) > 0)
         <div class="relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg container mx-auto mt-10">
-            <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-800 dark:text-gray-400">
+            <table class="w-full text-sm text-left text-gray-500">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Image
@@ -36,10 +38,9 @@
                 </thead>
                 <tbody>
                     @foreach ($menus as $menu)
-                        <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <td scope="row" class="font-medium text-gray-900 dark:text-white">
-                                <img src="storage/{{ $menu->menu_img_path }}" alt="menu_img"
-                                    class="h-40 w-28 object-cover">
+                        <tr class="bg-white border-b">
+                            <td class="font-medium text-gray-900">
+                                <img src="storage/{{ $menu->menu_img_path }}" alt="menu_img" class="h-40 w-28 object-cover">
                             </td>
                             <td class="px-6 py-4">
                                 <p>{{ $menu->menu_name }}</p>
@@ -67,7 +68,7 @@
                                 </form>
                             </td>
                         </tr>
-                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-800">
+                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-300">
                             <td colspan="6" class="px-5 py-4">
                                 <div class="text-center text-xl font-semibold text-gray-300">
                                     Edit
@@ -83,8 +84,7 @@
                                         <x-text-input type="text" name="menu_cat" value="{{ $menu->menu_cat }}"
                                             class="form-input block mt-1 w-full h-8" />
                                         <x-input-label>Description</x-input-label>
-                                        <textarea name="menu_desc"
-                                            class="w-full h-40 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
+                                        <textarea name="menu_desc" class="w-full h-40 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
                                         <x-input-label>Price</x-input-label>
                                         <x-text-input type="text" name="price" value="{{ $menu->price }}"
                                             class="w-full" />

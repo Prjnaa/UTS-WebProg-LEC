@@ -11,5 +11,5 @@
 }
 
 input[type="radio"]:checked + .card {
-    border-color: #d1d5db;
+    border-color: #000000;
 }

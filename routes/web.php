@@ -37,6 +37,9 @@ Route::post('/menu-create', [MenuController::class, 'store'])->name('menu.store'
 Route::put('/dashboard/update/{menu}', [MenuController::class, 'update'])->name('menu.update');
 
 Route::delete('/dashboard/delete/{menu}', [MenuController::class, 'destroy'])->name('menu.destroy');
+Route::delete('/cart/delete/{cartItem}', [CartController::class, 'deleteCartItem'])->name('cart.delete');
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

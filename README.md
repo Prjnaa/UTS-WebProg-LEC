@@ -3,8 +3,11 @@ Road to start
 2. run composer update
 3. rename .env.example to .env
 3. run php artisan migrate
-4. password admin : admin211023
-
+4. php artisan key:migrate
+5. npm run dev
+6. php artisan serve
+7. get into website using the link given by php artisan serve
+8. password admin : admin211023
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 

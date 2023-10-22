@@ -15,7 +15,7 @@
             @include('layouts.navigation')
         </section>
         <header class="text-center">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-xl text-white font font-semibold">
+            <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-xl text-black font-semibold">
                 Menu
             </div>
         </header>
@@ -34,7 +34,7 @@
                                 Show More...
                             </button>
                             <!-- Modal Background and Content -->
-                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 py-24 bg-black bg-opacity-60 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 translate-y-1">
+                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 py-24 bg-black bg-opacity-60 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 translate-y-1"@keydown.escape.window="showModal = false">
                                 <div x-show="showModal" class="bg-white rounded-xl md:shadow-2xl mx-5 w-full h-full md:mx-0 md:w-1/2 lg:w-2/5 lg:h-60 md:h-full overflow-hidden" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
                                     <div class="flex flex-col">
                                         <div class="flex flex-col lg:flex-row relative">

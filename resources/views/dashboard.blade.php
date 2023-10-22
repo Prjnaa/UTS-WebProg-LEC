@@ -1,6 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
+        <div class="text-xl text-gray-700 uppercase bg-gray-50">
         Dashboard
+        </div>
     </x-slot>
     <div class="text-center">
         <form method="get" action="{{ route('menu.create') }}">
@@ -63,7 +65,7 @@
                                 </form>
                             </td>
                         </tr>
-                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-800">
+                        <tr id="edit-row-{{ $menu->id }}" style="display: none;" class=" bg-gray-300">
                             <td colspan="6" class="px-5 py-4">
                                 <div class="text-center text-xl font-semibold text-gray-300">
                                     Edit

@@ -30,7 +30,7 @@
                             Price
                         </th>
                         <th scope="col" class="px-6 py-3">
-                            
+
                         </th>
                     </tr>
                 </thead>
@@ -38,7 +38,8 @@
                     @foreach ($menus as $menu)
                         <tr class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                             <td scope="row" class="font-medium text-gray-900 dark:text-white">
-                                <img src="storage/{{ $menu->menu_img_path }}" alt="menu_img" class="h-40 w-28 object-cover">
+                                <img src="storage/{{ $menu->menu_img_path }}" alt="menu_img"
+                                    class="h-40 w-28 object-cover">
                             </td>
                             <td class="px-6 py-4">
                                 <p>{{ $menu->menu_name }}</p>
@@ -54,12 +55,15 @@
                             </td>
                             <td class="px-6 py-4 flex">
                                 <!-- Add an Edit button to switch to edit mode -->
-                                <button type="button" class="bg-blue-700 hover:scale-105 hover:bg-blue-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200" onclick="toggleEdit({{ $menu->id }})">Edit</button>
+                                <button type="button"
+                                    class="bg-blue-700 hover:scale-105 hover:bg-blue-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200"
+                                    onclick="toggleEdit({{ $menu->id }})">Edit</button>
                                 <!-- Add a Delete button -->
                                 <form method="POST" action="{{ route('menu.destroy', $menu->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="bg-red-700 hover:scale-105 hover:bg-red-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200">Delete</button>
+                                    <button type="submit"
+                                        class="bg-red-700 hover:scale-105 hover:bg-red-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200">Delete</button>
                                 </form>
                             </td>
                         </tr>
@@ -73,17 +77,24 @@
                                     @method('PUT')
                                     <div class="flex flex-col space-y-2">
                                         <x-input-label>Menu Name</x-input-label>
-                                        <x-text-input type="text" name="menu_name" value="{{ $menu->menu_name }}" class="form-input block mt-1 w-full h-8" />
+                                        <x-text-input type="text" name="menu_name" value="{{ $menu->menu_name }}"
+                                            class="form-input block mt-1 w-full h-8" />
                                         <x-input-label>Category</x-input-label>
-                                        <x-text-input type="text" name="menu_cat" value="{{ $menu->menu_cat }}" class="form-input block mt-1 w-full h-8" />
+                                        <x-text-input type="text" name="menu_cat" value="{{ $menu->menu_cat }}"
+                                            class="form-input block mt-1 w-full h-8" />
                                         <x-input-label>Description</x-input-label>
-                                        <textarea name="menu_desc" class="w-full h-40 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
+                                        <textarea name="menu_desc"
+                                            class="w-full h-40 border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm p-2 resize-none">{{ $menu->menu_desc }}</textarea>
                                         <x-input-label>Price</x-input-label>
-                                        <x-text-input type="text" name="price" value="{{ $menu->price }}" class="w-full" />
+                                        <x-text-input type="text" name="price" value="{{ $menu->price }}"
+                                            class="w-full" />
                                     </div>
                                     <div class="flex mt-5">
-                                        <button type="submit" class="bg-green-700 hover:scale-105 hover:bg-green-950 px-2 py-1  rounded-md text-white transition duration-200">Save</button>
-                                        <button type="button" class="bg-red-700 hover:scale-105 hover:bg-red-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200" onclick="cancelEdit({{ $menu->id }})">Cancel</button>
+                                        <button type="submit"
+                                            class="bg-green-700 hover:scale-105 hover:bg-green-950 px-2 py-1  rounded-md text-white transition duration-200">Save</button>
+                                        <button type="button"
+                                            class="bg-red-700 hover:scale-105 hover:bg-red-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200"
+                                            onclick="cancelEdit({{ $menu->id }})">Cancel</button>
                                     </div>
                                 </form>
                             </td>

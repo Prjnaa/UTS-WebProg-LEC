@@ -10,7 +10,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased bg-gray-300 dark:bg-gray-900">
+    <body class="font-sans antialiased bg-gray-300 ">
         <section class=" sticky top-0 z-10">
             @include('layouts.navigation')
         </section>
@@ -19,7 +19,7 @@
                 Menu
             </div>
         </header>
-        <div class="dark:text-gray-100 grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 2xl:grid-cols-5 2xl:px-24 md:gap-8 w-screen px-5 pt-10 justify-items-center">
+        <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 w-screen px-5 pt-10 justify-items-center">
             @foreach ($menus as $menu)
                 <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-40 lg:w-80 relative ">
                     <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-32 sm:h-40 w-full lg:w-40 lg:h-full object-cover">

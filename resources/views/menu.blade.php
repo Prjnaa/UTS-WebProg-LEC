@@ -11,14 +11,16 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased  bg-gray-200">
+    <body class="font-sans antialiased  bg-gray-200"style="background-image: url('../storage/Mirage.png'); background-size: cover; background-repeat: no-repeat;">
         <section class=" sticky top-0 z-10">
             @include('layouts.navigation')
         </section>
         <header class="text-center">
-            <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-xl text-black font-semibold">
-                Menu
-            </div>
+        <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-4xl text-ash font-semibold" style="text-shadow: 2px 2px 0 grey, 4px 4px 0 yellow;">
+    Menu
+</div>
+
+
         </header>
         <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 w-screen px-5 pt-10 justify-items-center">
             @foreach ($menus as $menu)

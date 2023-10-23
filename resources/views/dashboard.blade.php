@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="text-xl text-gray-700 uppercase">
+        <div class="text-xl text-black-700 uppercase">
         Dashboard
         </div>
     </x-slot>
@@ -13,8 +13,8 @@
     </div>
     @if (count($menus) > 0)
         <div class="relative overflow-x-auto overflow-y-auto shadow-md sm:rounded-lg container mx-auto mt-10">
-            <table class="w-full text-sm text-left text-gray-500">
-                <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+            <table class="w-full text-xl text-left text-gray-800">
+                <thead class="text-base text-gray-700 uppercase bg-gray-50">
                     <tr>
                         <th scope="col" class="px-6 py-3">
                             Image

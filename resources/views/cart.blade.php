@@ -1,9 +1,11 @@
 <x-app-layout>
-    <x-slot name="header">Cart</x-slot>
+<x-slot name="header">
+        <h2 class="text-2xl font-semibold leading-tight">Cart</h2>
+    </x-slot>
         @if (count($cartItems) > 0)
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg container sm:w-2/3 mx-auto mt-5">
-                <table class="w-full text-sm text-left text-gray-500">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                <table class="w-full text-xl text-left text-gray-500">
+                    <thead class="text-base text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" class="px-6 py-3">
                                 Menu Name
@@ -50,7 +52,7 @@
                         </tr>
                     </tfoot>
                 </table>
-        </div @else <p class=" text-center m-10 text-xl">Your cart is empty</p>
+        </div @else <p class=" text-center m-10 text-3xl">Your cart is empty</p>
     </div>
         @endif
 </x-app-layout>

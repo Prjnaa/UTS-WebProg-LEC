@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="bg-white shadow-md">
+<nav x-data="{ open: false }" class="shadow-md shadow-2xl bg-white bg-opacity-40">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:max-w-full sm:mx-16 lg:px-8">
         <div class="flex justify-between h-20">
@@ -7,17 +7,17 @@
                 <div class="shrink-0 flex items-center overflow-hidden">
                     <a href="{{ route('home') }}" class="flex items-center">
                         <x-application-logo-sm class="block w-auto fill-current text-gray-800" />
-                        <div class="text-white ml-3 font-semibold text-lg">
-                            IFood
+                        <div class="text-black ml-3 font-semibold text-xl">
+                            IFFood
                         </div>
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 @if (Auth::check() && Auth::user()->type === 'admin')
-                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-12 sm:flex" class="inline-flex items-center justify-center p-2 rounded-md">
                         @if (Route::currentRouteName() !== 'dashboard' && request()->url() !== route('dashboard'))
-                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" class="text-black text-xl font-semibold">
                                 {{ __('Dashboard') }}
                             </x-nav-link>
                         @endif
@@ -32,7 +32,7 @@
                     @if (Route::currentRouteName() !== 'cart' && request()->url() !== route('cart'))
                         <x-nav-link :href="route('cart')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                viewBox="0 0 32.402 32" id="cart" class="fill-gray-500 hidden sm:flex">
+                                viewBox="0 0 32.402 32" id="cart" class="fill-black-500 hidden sm:flex">
                                 <path
                                     d="M6 30a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zm18 0a2 2 1080 1 0 4 0 2 2 1080 1 0-4 0zM-.058 5a1 1 0 0 0 1 1H3.02l1.242 5.312L6 20c0 .072.034.134.042.204l-1.018 4.58A.997.997 0 0 0 6 26h22.688a1 1 0 0 0 0-2H7.248l.458-2.06c.1.016.19.06.294.06h18.23c1.104 0 1.77-.218 2.302-1.5l3.248-9.964C32.344 8.75 31.106 8 30 8H6c-.156 0-.292.054-.438.088l-.776-3.316A1 1 0 0 0 3.812 4H.942a1 1 0 0 0-1 1zm6.098 5h23.81l-3.192 9.798c-.038.086-.07.148-.094.19-.066.006-.17.012-.334.012H8v-.198l-.038-.194L6.04 10z">
                                 </path>

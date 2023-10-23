@@ -11,9 +11,8 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-200">
+    <div class="min-h-screen bg-gray-200" style="background-image: url('../storage/Mirage.png'); background-size: cover; background-repeat: no-repeat;">
         @include('layouts.navigation')
 
         <!-- Page Heading -->

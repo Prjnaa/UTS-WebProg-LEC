@@ -1,1 +1,1 @@
-<img src="storage/images/logo.png" alt="Logo" class=" antialiased h-40">
+<img src="storage/images/logo.png" alt="Logo" class=" antialiased h-48">

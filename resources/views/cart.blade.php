@@ -1,7 +1,14 @@
 <x-app-layout>
-<x-slot name="header">
-        <h2 class="text-2xl font-semibold leading-tight">Cart</h2>
-    </x-slot>
+    <div class="relative bg-cover bg-center w-2/3 container mx-auto rounded-lg p-5 m-5" style="background-image: url('../storage/images/bg.jpg'); height: 200px;">
+        <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
+        <div class="absolute inset-0 flex flex-col md:pl-20 pr-4 md:pr-32 items-left justify-center w-full md:w-4/4 mx-auto">
+            <div class="custom-font text-white text-4xl md:text-6xl font-semibold text-left ">
+                Cart
+            </div>
+        </div>
+    </div>
+
+
         @if (count($cartItems) > 0)
             <div class="relative overflow-x-auto shadow-md sm:rounded-lg container sm:w-2/3 mx-auto mt-5">
                 <table class="w-full text-xl text-left text-gray-500">
@@ -52,7 +59,18 @@
                         </tr>
                     </tfoot>
                 </table>
-        </div @else <p class=" text-center m-10 text-3xl">Your cart is empty</p>
+        </div>
+        <div class="container mx-auto sm:w-2/3 mt-5">
+            <div class="text-left">
+                <a href="" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-black-500 transition duration-300">
+                    Proceed to Checkout
+                </a>
+            </div>
+        </div>
+
+        @else <p class=" text-center m-10 text-3xl">Your cart is empty</p>
     </div>
         @endif
+
+        
 </x-app-layout>

@@ -1,4 +1,4 @@
-<nav x-data="{ open: false }" class="shadow-md shadow-2xl bg-white bg-opacity-40">
+<nav x-data="{ open: false }" class="shadow-md shadow-2xl bg-white bg-opacity-100">
     <!-- Primary Navigation Menu -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 sm:max-w-full sm:mx-16 lg:px-8">
         <div class="flex justify-between h-20">
@@ -7,8 +7,8 @@
                 <div class="shrink-0 flex items-center overflow-hidden">
                     <a href="{{ route('home') }}" class="flex items-center">
                         <x-application-logo-sm class="block w-auto fill-current text-gray-800" />
-                        <div class="text-black ml-3 font-semibold text-xl">
-                            IFFood
+                        <div class="text-black ml-3 font-semibold text-xl" style="color: #A63C09;">
+                            Crunchy Bakery
                         </div>
                     </a>
                 </div>

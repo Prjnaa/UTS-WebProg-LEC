@@ -5,71 +5,521 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist&display=swap" rel="stylesheet">
+    <!-- FAVICON AND TOUCH ICONS -->
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="152x152" href="images/apple-touch-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="images/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="images/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+		<link rel="icon" href="images/apple-touch-icon.png" type="image/x-icon">
 
+		<!-- GOOGLE FONTS -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+
+		<!-- BOOTSTRAP CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+				
+		<!-- FONT ICONS -->
+		<link href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" rel="stylesheet" crossorigin="anonymous">		
+		<link href="css/flaticon.css" rel="stylesheet">
+
+		<!-- PLUGINS STYLESHEET -->
+		<link href="css/menu.css" rel="stylesheet">
+		<link href="css/magnific-popup.css" rel="stylesheet">	
+		<link href="css/flexslider.css" rel="stylesheet">
+		<link href="css/owl.carousel.min.css" rel="stylesheet">
+		<link href="css/owl.theme.default.min.css" rel="stylesheet">
+		<link href="css/jquery.datetimepicker.min.css" rel="stylesheet">
+	
+		<!-- TEMPLATE CSS -->
+		<link href="css/style.css" rel="stylesheet">
+
+		<!-- RESPONSIVE CSS -->
+		<link href="css/responsive.css" rel="stylesheet">
+
+    <style>
+    .custom-font {
+        font-family: 'Urbanist', sans-serif;
+    }
+    
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased  bg-gray-200"style="background-image: url('../storage/Mirage.png'); background-size: cover; background-repeat: no-repeat;">
+    <body class="font-sans antialiased  bg-white">
         <section class=" sticky top-0 z-10">
             @include('layouts.navigation')
         </section>
-        <header class="text-center">
-        <div class="max-w-8xl mx-auto py-6 px-4 sm:px-6 lg:px-8 text-4xl text-ash font-semibold" style="text-shadow: 2px 2px 0 grey, 4px 4px 0 yellow;">
-    Menu
-</div>
 
+        <div class="relative bg-cover bg-center" style="background-image: url('../storage/images/bg.jpg'); height: 800px;">
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div class="absolute inset-0 flex flex-col pl-4 md:pl-20 pr-4 md:pr-32 items-left justify-center w-full md:w-3/4 mx-auto">
+                <div class="custom-font text-white text-4xl md:text-6xl font-semibold text-left p-4">
+                    CRISPY CRUNCY
+                </div>
+                <div class="custom-font text-5xl md:text-7xl font-semibold text-left p-4" style="color: #A63B08;">
+                    CRUNCHY BAKERY
+                </div>
+                <p class="text-white p-4">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a efficitur lorem. Phasellus lacinia urna pretium neque fringilla, ut varius mauris maximus. Ut sem tellus, sagittis at mi in, faucibus aliquam ligula. Nulla eu odio sem. Maecenas lorem quam, tincidunt eget fringilla non, tempor eu odio. Nunc id eros lobortis, volutpat quam at, accumsan ex. Vestibulum sit amet tristique elit, ut vulputate mi. Curabitur volutpat ornare aliquam. Proin tristique est ligula, id fermentum mi blandit non. Ut varius erat hendrerit sapien efficitur, at porta ligula gravida. In vestibulum vestibulum quam, et tristique lorem mattis in.
+                </p>
+            </div>
+        </div>
 
-        </header>
-        <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 w-screen px-5 pt-10 justify-items-center">
-            @foreach ($menus as $menu)
-                <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-40 lg:w-80 relative ">
-                    <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-32 sm:h-40 w-full lg:w-40 lg:h-full object-cover">
-                    <div class="p-3 flex flex-col lg:h-full justify-between">
-                        <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
-                            <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
-                            <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
-                        </div>
-                        <div x-data="{ showModal : false }">
-                            <!-- Modal Button -->
-                            <button @click="showModal = !showModal" type="button" class="text-xs text-slate-800 hover:underline hover:scale-105 transition mt-2">
-                                Show More...
-                            </button>
-                            <!-- Modal Background and Content -->
-                            <div x-show="showModal" class="fixed text-gray-500 flex items-center justify-center overflow-auto z-50 py-24 bg-black bg-opacity-40 left-0 right-0 top-0 bottom-0" x-transition:enter="transition ease duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0 translate-y-1"@keydown.escape.window="showModal = false">
-                                <div x-show="showModal" class="bg-white rounded-xl md:shadow-2xl mx-5 w-full h-full md:mx-0 md:w-1/2 lg:w-2/5 lg:h-60 md:h-full overflow-hidden" @click.away="showModal = false" x-transition:enter="transition ease duration-100 transform" x-transition:enter-start="opacity-0 scale-90 translate-y-1" x-transition:enter-end="opacity-100 scale-100 translate-y-0" x-transition:leave="transition ease duration-100 transform" x-transition:leave-start="opacity-100 scale-100 translate-y-0" x-transition:leave-end="opacity-0 scale-90 translate-y-1">
-                                    <div class="flex flex-col">
-                                        <div class="flex flex-col lg:flex-row relative">
-                                            <img src="storage/{{ $menu->menu_img_path }}" alt="menu image" class="w-full lg:w-1/3 h-48 lg:h-64 object-cover">
-                                            <div class="lg:w-2/3 p-5 relative">
-                                                <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
-                                                <span class="text-gray-500 text-sm">#{{ $menu->menu_cat }}</span>
-                                                <div id="price" class="font-semibold mb-1 text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
-                                                <p class="leading-6 text-gray-500">{{ $menu->menu_desc }}</p>
-                                                @if (Auth::check())
-                                                    <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-4">
-                                                        @csrf
-                                                        <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition absolute bottom-8">Add to Cart</button>
-                                                    </form>
-                                                @endif
-                                            </div>
-                                            <button @click="showModal = false; document.cookie = 'modal=hidden'" class="flex items-start absolute right-3 top-3 hover:scale-125 transition duration-300">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            
-                        </div>
+        <div class="page w-11/12 sm:w-3/4 mx-auto mt-10 mb-10">
+            <div class="info">
+                <div class="flex flex-col sm:flex-row">
+                    <div class="w-full sm:w-2/5">
+                        <img src="../storage/images/about-03-img.png" alt="Image" class="h-680 sm:h-800" />
+                    </div>
+                    <div class="w-full sm:w-3/5 p-6">
+                        <h2 class="text-4xl sm:text-6xl font-semibold">NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD DICK</h2>
+                        <p class="mt-4">
+                            Your paragraph text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </p>
                     </div>
                 </div>
-            @endforeach
-
+            </div>
         </div>
+
+
+        <div class="relative bg-cover bg-center" style="background-image: url('../storage/images/bg-05.jpg'); height: 300px;">
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <div class="custom-font text-white text-6xl font-semibold text-left p-4">
+                    Good Food
+                </div>
+            </div>
+        </div>
+
+        <div class="page w-3/4 mx-auto mt-10 mb-10">
+        <div class="custom-font  text-7xl font-semibold text-left p-4" style="color: #A63B08;">
+                    Our Menu
+        </div>
+    
+            <div class="nav-align-top">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                    <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-home" aria-controls="navs-top-home" aria-selected="true">Food</button>
+                    </li>
+                    <li class="nav-item">
+                    <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-profile" aria-controls="navs-top-profile" aria-selected="false">Drink</button>
+                    </li>
+                    <li class="nav-item">
+                    <button type="button" class="nav-link" role="tab" data-bs-toggle="tab" data-bs-target="#navs-top-messages" aria-controls="navs-top-messages" aria-selected="false">Desert</button>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                <div class="tab-pane fade" id="navs-top-home" role="tabpanel">
+                    <div class="container">
+                        
+                    </div>
+                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+                    @foreach ($menus as $menu)
+                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
+                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
+                                <div class="p-4 flex flex-col lg:h-full justify-between">
+                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
+                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+                                    </div>
+                                    @if (Auth::check())
+                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+                                            @csrf
+                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+                                        </form>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
+                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+                    @foreach ($menus as $menu)
+                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
+                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
+                                <div class="p-4 flex flex-col lg:h-full justify-between">
+                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
+                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+                                    </div>
+                                    @if (Auth::check())
+                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+                                            @csrf
+                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+                                        </form>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    </div>
+                    <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">
+                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+                    @foreach ($menus as $menu)
+                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
+                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
+                                <div class="p-4 flex flex-col lg:h-full justify-between">
+                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
+                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+                                    </div>
+                                    @if (Auth::check())
+                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+                                            @csrf
+                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+                                        </form>
+                                    @endif
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+
+        
+    
+			<!-- GALLERY-2
+			============================================= -->		
+			<section id="gallery-2" class="gallery-section division pb-5">
+				<div class="w-3/4 mx-auto">
+
+                <div class="custom-font  text-7xl font-semibold text-left p-4" style="color: #A63B08;">
+                    Our Gallery
+                </div>
+
+					<!-- IMAGES HOLDER -->
+					<div class="row">
+
+
+						<!-- IMAGE #1 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-13.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-01.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Crunch Roll</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.5</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star-half-alt"></i>
+													<span>(23)</span>
+												</div>		
+											</div>										 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>
+
+
+						<!-- IMAGE #2 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-02.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-02.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Margherita Pizza</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.52</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star-half-alt"></i>
+													<span>(58)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #3 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-11.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-03.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Lemon Garlic Shrimp</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.85</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<span>(71)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #4 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-14.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-04.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Fried Shrimps</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.38</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star-half-alt"></i>
+													<span>(41)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #5 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-05.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-05.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Mini Chicken Pizza</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>5</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<span>(86)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #6 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-09.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-06.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Grilled Salmon</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>5</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<span>(64)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #7 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-15.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-07.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Miso Soup</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.85</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<span>(71)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>	
+
+
+						<!-- IMAGE #8 -->
+					  	<div class="col-sm-6 col-lg-3">
+					  		<div class="gallery-img">
+						  		<a href="../storage/images/img-10.jpg" class="image-link">
+									<div class="hover-overlay"> 
+										<img class="img-fluid" src="../storage/images/img-08.jpg" alt="gallery-image" />			
+										<div class="item-overlay"></div>
+
+										<!-- Image Meta -->
+										<div class="img-meta white-color">
+											<h5 class="h5-xs">Philadelphia Roll</h5>		
+											<div class="txt-block-rating">
+												<div class="stars-rating">
+													<span>4.65</span>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star-half-alt"></i>
+													<span>(89)</span>
+												</div>		
+											</div>											 
+										</div> 
+
+									</div>
+								</a>
+							</div>
+						</div>
+
+
+					</div>	<!-- END IMAGES HOLDER -->
+
+
+				</div>	   <!-- End container -->
+			</section>	<!-- END GALLERY-2 -->
+
+
+        <!-- GOOGLE MAP
+        ============================================= -->
+        <div id="gmap">
+            <div class="google-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.838357620288!2d144.95358331497258!3d-37.81725497975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4dd5a05d97%3A0x3e64f855a564844d!2zMTIxIEtpbmcgU3QsIE1lbGJvdXJuZSBWSUMgMzAwMCwg0JDQstGB0YLRgNCw0LvQuNGP!5e0!3m2!1sru!2sua!4v1605805230806!5m2!1sru!2sua" width="100%" height="450" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div> <!-- END GOOGLE MAP -->
+
+
+        <!-- Footer 1 - Bootstrap Brain Component -->
+            <footer class="footer">
+
+            <!-- Copyright - Bootstrap Brain Component -->
+            <section class="bg-light py-5 py-xl-8 py-xxl-9 border-top border-light">
+            <div class="container overflow-hidden">
+                <div class="row gy-5 gy-md-0">
+                <div class="col-xs-12 col-md-7 order-1 order-md-0">
+                    <div class="copyright text-center text-md-start">
+                    &copy; 2023. All Rights Reserved.
+                    </div>
+                    <div class="credits text-secondary text-center text-md-start mt-2 fs-7">
+                        Built by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none">Cruncy Prajna Dick</a></span>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-md-5 order-0 order-md-1">
+                    <ul class="nav justify-content-center justify-content-md-end">
+                    <li class="nav-item">
+                        <a class="nav-link link-dark" href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                        </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-dark" href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z" />
+                        </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-dark" href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                        </svg>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link link-dark" href="#!">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                        </svg>
+                        </a>
+                    </li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </section>
+
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
     </body>
 </html>

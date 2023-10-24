@@ -8,7 +8,7 @@
                     <a href="{{ route('home') }}" class="flex items-center">
                         <x-application-logo-sm class="block w-auto fill-current text-gray-800" />
                         <div class="text-black ml-3 font-semibold text-xl" style="color: #A63C09;">
-                            Crunchy Bakery
+                            IF330 MirageResto
                         </div>
                     </a>
                 </div>

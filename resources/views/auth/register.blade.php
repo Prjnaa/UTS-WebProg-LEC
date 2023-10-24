@@ -73,6 +73,9 @@
             <x-text-input id="birth_date" class="block mt-1 w-full h-8" type="date" name="birth_date" :value="old('birth_date')" required/>
         </div>
 
+        {{-- reCaptcha --}}
+        <div class="mt-4" id="recaptcha"></div>
+            <div class="g-recaptcha" data-sitekey="6LeyyMcoAAAAACNKTwMnYlk4osbx4Ap6eqyobWXS"></div>
         <div class="flex items-center justify-end mt-10">
             <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                 {{ __('Already registered?') }}

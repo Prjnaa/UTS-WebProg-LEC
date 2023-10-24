@@ -15,6 +15,8 @@ use Illuminate\Validation\Rules;
 use Illuminate\View\View;
 
 
+
+
 class RegisteredUserController extends Controller
 {
     /**

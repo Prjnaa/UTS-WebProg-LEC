@@ -1,0 +1,39 @@
+<?php
+
+namespace App\Rules;
+
+use Closure;
+use Illuminate\Support\Facades\Http; // Import the Http facade.
+use Illuminate\Contracts\Validation\Rule;
+
+class RecaptchaRule implements Rule
+{
+    /**
+     * Determine if the validation rule passes.
+     *
+     * @param  string  $attribute
+     * @param  mixed  $value
+     * @return bool
+     */
+    public function passes($attribute, $value)
+    {
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => config('services.recaptcha.secret'),
+            'response' => $value,
+            'remoteip' => request()->ip(),
+        ]);
+    
+        return $response['success'];
+    }
+    
+
+    /**
+     * Get the validation error message.
+     *
+     * @return string
+     */
+    public function message() 
+    {
+        return 'The reCAPTCHA verification failed. Please try again.';
+    }
+}

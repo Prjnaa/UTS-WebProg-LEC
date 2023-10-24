@@ -8,11 +8,11 @@
 </style>
 
 <x-app-layout>
-<div class="relative bg-cover bg-center w-2/3 container mx-auto rounded-lg p-5 m-5" style="background-image: url('../storage/images/bg.jpg'); height: 200px;">
+<div class="relative bg-cover bg-center w-3/3 container mx-auto rounded-lg p-5 m-5" style="background-image: url('../storage/images/bg.jpg'); height: 200px;">
         <div class="absolute inset-0 bg-black opacity-40 rounded-lg"></div>
         <div class="absolute inset-0 flex flex-col md:pl-20 pr-4 md:pr-32 items-left justify-center w-full md:w-4/4 mx-auto">
             <div class="custom-font text-white text-4xl md:text-6xl font-semibold text-left ">
-                Cart
+                Dashboard
             </div>
         </div>
     </div>
@@ -107,9 +107,6 @@
                                     <div class="flex mt-5">
                                         <button type="submit"
                                             class="bg-green-700 hover:scale-105 hover:bg-green-950 px-2 py-1  rounded-md text-white transition duration-200">Save</button>
-                                        <button type="button"
-                                            class="bg-red-700 hover:scale-105 hover:bg-red-950 px-2 py-1 ml-3 rounded-md text-white transition duration-200"
-                                            onclick="cancelEdit({{ $menu->id }})">Cancel</button>
                                     </div>
                                 </form>
                             </td>

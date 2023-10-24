@@ -32,6 +32,11 @@
             </label>
         </div>
 
+        {{-- reCaptcha --}}
+        <div class="mt-4" id="recaptcha"></div>
+            <div class="g-recaptcha" data-sitekey="6LeyyMcoAAAAACNKTwMnYlk4osbx4Ap6eqyobWXS"></div>
+        </div>
+
         <div class="flex items-center justify-end mt-4">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
@@ -39,9 +44,18 @@
                 </a>
             @endif
 
+
             <x-primary-button class="ml-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
     </form>
+    <script>
+        function onClick(e) {
+          e.preventDefault();
+          grecaptcha.enterprise.ready(async () => {
+            const token = await grecaptcha.enterprise.execute('6LeyyMcoAAAAACNKTwMnYlk4osbx4Ap6eqyobWXS', {action: 'LOGIN'});
+          });
+        }
+        </script>
 </x-guest-layout>

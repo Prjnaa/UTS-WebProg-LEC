@@ -65,13 +65,13 @@
             <div class="absolute inset-0 bg-black opacity-40"></div>
             <div class="absolute inset-0 flex flex-col pl-4 md:pl-20 pr-4 md:pr-32 items-left justify-center w-full md:w-3/4 mx-auto">
                 <div class="custom-font text-white text-4xl md:text-6xl font-semibold text-left p-4">
-                    CRISPY CRUNCY
+                    A Culinary Oasis
                 </div>
                 <div class="custom-font text-5xl md:text-7xl font-semibold text-left p-4" style="color: #A63B08;">
-                    CRUNCHY BAKERY
+                    MIRAGE RESTO
                 </div>
                 <p class="text-white p-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam a efficitur lorem. Phasellus lacinia urna pretium neque fringilla, ut varius mauris maximus. Ut sem tellus, sagittis at mi in, faucibus aliquam ligula. Nulla eu odio sem. Maecenas lorem quam, tincidunt eget fringilla non, tempor eu odio. Nunc id eros lobortis, volutpat quam at, accumsan ex. Vestibulum sit amet tristique elit, ut vulputate mi. Curabitur volutpat ornare aliquam. Proin tristique est ligula, id fermentum mi blandit non. Ut varius erat hendrerit sapien efficitur, at porta ligula gravida. In vestibulum vestibulum quam, et tristique lorem mattis in.
+                    MirageResto beckons you into a world where dining becomes an enchanting journey, blurring the lines between reality and culinary dreams. Nestled in the heart of the city, this captivating oasis seamlessly combines modern sophistication with a touch of mystique, offering an inviting ambiance. Our menu, crafted by talented chefs, presents a symphony of global flavors, meticulously prepared with the finest ingredients. From succulent steaks to delectable seafood and enticing vegetarian options, MirageResto has something to delight every palate. The bar offers an extensive selection of wines, craft cocktails, and premium spirits, expertly mixed by our skilled mixologists. With attentive staff dedicated to creating personalized moments, MirageResto is the ideal setting for romantic dinners, special celebrations, and business meetings alike. Escape the ordinary and immerse yourself in the illusion of flavors, making dining an extraordinary experience at MirageResto.
                 </p>
             </div>
         </div>
@@ -83,9 +83,13 @@
                         <img src="../storage/images/about-03-img.png" alt="Image" class="h-680 sm:h-800" />
                     </div>
                     <div class="w-full sm:w-3/5 p-6">
-                        <h2 class="text-4xl sm:text-6xl font-semibold">NOTHING BRINGS PEOPLE TOGETHER LIKE A GOOD DICK</h2>
+                        <h2 class="text-4xl sm:text-6xl font-semibold">A CULINARY JOURNEY BEYOND IMAGINATION</h2>
                         <p class="mt-4">
-                            Your paragraph text goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Step into a world of gastronomic opulence at our exquisite restaurant, where every dish is a masterpiece and every meal is a symphony of flavors. Our culinary artisans have crafted a menu that combines the finest ingredients, innovative techniques, and a deep passion for the art of cooking.
+
+							Indulge in a sensory adventure that transcends ordinary dining, as our dedicated chefs create each plate with meticulous attention to detail. From the tantalizing appetizers to the sumptuous entrées and decadent desserts, every bite is a revelation of taste and texture.
+							
+							Our restaurant is not just a place to eat; it's a destination for those who seek an extraordinary dining experience. The ambiance is one of refined luxury, with a warm and inviting atmosphere that complements the culinary wonders on your plate.
                         </p>
                     </div>
                 </div>
@@ -96,7 +100,7 @@
         <div class="relative bg-cover bg-center" style="background-image: url('../storage/images/bg-05.jpg'); height: 300px;">
             <div class="absolute inset-0 flex flex-col items-center justify-center">
                 <div class="custom-font text-white text-6xl font-semibold text-left p-4">
-                    Good Food
+                    This Is Mirage
                 </div>
             </div>
         </div>
@@ -119,77 +123,74 @@
                     </li>
                 </ul>
                 <div class="tab-content">
-                <div class="tab-pane fade" id="navs-top-home" role="tabpanel">
-                    <div class="container">
-                        
-                    </div>
-                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
-                    @foreach ($menus as $menu)
-                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
-                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
-                                <div class="p-4 flex flex-col lg:h-full justify-between">
-                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
-                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
-                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
-                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
-                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
-                                    </div>
-                                    @if (Auth::check())
-                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
-                                            @csrf
-                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
-                                        </form>
-                                    @endif
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                    </div>
+					<div class="tab-pane fade show active" id="navs-top-home" role="tabpanel">
+						<div class="container">
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-5 md:x-0 lg:px-16 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+							@foreach ($menus as $menu)
+								<div class="bg-white rounded-lg shadow-lg w-full overflow-hidden relative">
+									<img src="storage/{{ $menu->menu_img_path }}" alt="" class="w-full h-40 sm:h-48 object-cover">
+									<div class="p-4">
+										<h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+										<span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+										<p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+										<div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+										@if (Auth::check())
+										<form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+											@csrf
+											<button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+										</form>
+										@endif
+									</div>
+								</div>
+								@endforeach
+							</div>
+						</div>
+					</div>
                     <div class="tab-pane fade" id="navs-top-profile" role="tabpanel">
-                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
-                    @foreach ($menus as $menu)
-                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
-                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
-                                <div class="p-4 flex flex-col lg:h-full justify-between">
-                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
-                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
-                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
-                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
-                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
-                                    </div>
-                                    @if (Auth::check())
-                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
-                                            @csrf
-                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
-                                        </form>
-                                    @endif
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+						<div class="container">
+								<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-5 md:x-0 lg:px-16 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+									@foreach ($menus as $menu)
+									<div class="bg-white rounded-lg shadow-lg w-full overflow-hidden relative">
+										<img src="storage/{{ $menu->menu_img_path }}" alt="" class="w-full h-40 sm:h-48 object-cover">
+										<div class="p-4">
+											<h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+											<span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+											<p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+											<div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+											@if (Auth::check())
+											<form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+												@csrf
+												<button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+											</form>
+											@endif
+										</div>
+									</div>
+									@endforeach
+								</div>
+							</div>
                     </div>
                     <div class="tab-pane fade" id="navs-top-messages" role="tabpanel">
-                    <div class="grid grid-cols-2 gap-5 md:grid-cols-3 md:x-0 lg:grid-cols-2 lg:px-16 xl:grid-cols-4 3xl:grid-cols-5 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
-                    @foreach ($menus as $menu)
-                            <div class="bg-white rounded-lg shadow-lg w-full object-cover aspect-square lg:flex lg:h-56 lg:w-96 relative p-2">
-                                <img src="storage/{{ $menu->menu_img_path }}" alt="" class="rounded-t-lg lg:rounded-l-lg lg:rounded-r-none h-40 sm:h-48 lg:w-40 lg:h-full object-cover">
-                                <div class="p-4 flex flex-col lg:h-full justify-between">
-                                    <div class="lg:flex lg:flex-col lg:justify-center lg:h-full">
-                                        <h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
-                                        <span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
-                                        <p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
-                                        <div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
-                                    </div>
-                                    @if (Auth::check())
-                                        <form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
-                                            @csrf
-                                            <button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
-                                        </form>
-                                    @endif
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
+						<div class="container">
+							<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 3xl:grid-cols-5 gap-5 md:x-0 lg:px-16 2xl:px-24 md:gap-8 px-5 pt-10 justify-items-center">
+								@foreach ($menus as $menu)
+								<div class="bg-white rounded-lg shadow-lg w-full overflow-hidden relative">
+									<img src="storage/{{ $menu->menu_img_path }}" alt="" class="w-full h-40 sm:h-48 object-cover">
+									<div class="p-4">
+										<h2 class="font-semibold text-xl text-slate-800 leading-6">{{ $menu->menu_name }}</h2>
+										<span class="text-xs text-gray-500 leading-5">#{{ $menu->menu_cat }}</span>
+										<p class="leading-6 text-gray-500 my-2">{{ $menu->menu_desc }}</p>
+										<div id="price" class="font-semibold text-slate-800">{{ 'Rp.' . ' ' .  number_format($menu->price) }}</div>
+										@if (Auth::check())
+										<form action="{{ route('addToCart', ['menu' => $menu->id]) }}" method="POST" class="mt-3">
+											@csrf
+											<button type="submit" class="text-sm bg-gray-700 text-white rounded-lg py-2 px-4 hover:bg-gray-950 transition">Add to Cart</button>
+										</form>
+										@endif
+									</div>
+								</div>
+								@endforeach
+							</div>
+						</div>
                     </div>
                 </div>
                 </div>
@@ -215,24 +216,8 @@
 					  		<div class="gallery-img">
 						  		<a href="../storage/images/img-13.jpg" class="image-link">
 									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-01.jpg" alt="gallery-image" />			
+										<img class="img-fluid aspect-square object-cover w-96" src="../storage/images/img-01.jpg" alt="gallery-image" />			
 										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Crunch Roll</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.5</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star-half-alt"></i>
-													<span>(23)</span>
-												</div>		
-											</div>										 
-										</div> 
 
 									</div>
 								</a>
@@ -245,24 +230,8 @@
 					  		<div class="gallery-img">
 						  		<a href="../storage/images/img-02.jpg" class="image-link">
 									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-02.jpg" alt="gallery-image" />			
+										<img class="img-fluid aspect-square object-cover w-96" src="../storage/images/img-02.jpg" alt="gallery-image" />			
 										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Margherita Pizza</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.52</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star-half-alt"></i>
-													<span>(58)</span>
-												</div>		
-											</div>											 
-										</div> 
 
 									</div>
 								</a>
@@ -275,24 +244,8 @@
 					  		<div class="gallery-img">
 						  		<a href="../storage/images/img-11.jpg" class="image-link">
 									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-03.jpg" alt="gallery-image" />			
+										<img class="img-fluid aspect-square object-cover w-96" src="../storage/images/img-03.jpg" alt="gallery-image" />			
 										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Lemon Garlic Shrimp</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.85</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<span>(71)</span>
-												</div>		
-											</div>											 
-										</div> 
 
 									</div>
 								</a>
@@ -305,149 +258,12 @@
 					  		<div class="gallery-img">
 						  		<a href="../storage/images/img-14.jpg" class="image-link">
 									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-04.jpg" alt="gallery-image" />			
+										<img class="img-fluid aspect-square object-cover w-96" src="../storage/images/img-04.jpg" alt="gallery-image" />			
 										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Fried Shrimps</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.38</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star-half-alt"></i>
-													<span>(41)</span>
-												</div>		
-											</div>											 
-										</div> 
-
 									</div>
 								</a>
 							</div>
 						</div>	
-
-
-						<!-- IMAGE #5 -->
-					  	<div class="col-sm-6 col-lg-3">
-					  		<div class="gallery-img">
-						  		<a href="../storage/images/img-05.jpg" class="image-link">
-									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-05.jpg" alt="gallery-image" />			
-										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Mini Chicken Pizza</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>5</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<span>(86)</span>
-												</div>		
-											</div>											 
-										</div> 
-
-									</div>
-								</a>
-							</div>
-						</div>	
-
-
-						<!-- IMAGE #6 -->
-					  	<div class="col-sm-6 col-lg-3">
-					  		<div class="gallery-img">
-						  		<a href="../storage/images/img-09.jpg" class="image-link">
-									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-06.jpg" alt="gallery-image" />			
-										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Grilled Salmon</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>5</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<span>(64)</span>
-												</div>		
-											</div>											 
-										</div> 
-
-									</div>
-								</a>
-							</div>
-						</div>	
-
-
-						<!-- IMAGE #7 -->
-					  	<div class="col-sm-6 col-lg-3">
-					  		<div class="gallery-img">
-						  		<a href="../storage/images/img-15.jpg" class="image-link">
-									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-07.jpg" alt="gallery-image" />			
-										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Miso Soup</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.85</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<span>(71)</span>
-												</div>		
-											</div>											 
-										</div> 
-
-									</div>
-								</a>
-							</div>
-						</div>	
-
-
-						<!-- IMAGE #8 -->
-					  	<div class="col-sm-6 col-lg-3">
-					  		<div class="gallery-img">
-						  		<a href="../storage/images/img-10.jpg" class="image-link">
-									<div class="hover-overlay"> 
-										<img class="img-fluid" src="../storage/images/img-08.jpg" alt="gallery-image" />			
-										<div class="item-overlay"></div>
-
-										<!-- Image Meta -->
-										<div class="img-meta white-color">
-											<h5 class="h5-xs">Philadelphia Roll</h5>		
-											<div class="txt-block-rating">
-												<div class="stars-rating">
-													<span>4.65</span>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star"></i>
-													<i class="fas fa-star-half-alt"></i>
-													<span>(89)</span>
-												</div>		
-											</div>											 
-										</div> 
-
-									</div>
-								</a>
-							</div>
-						</div>
 
 
 					</div>	<!-- END IMAGES HOLDER -->
@@ -478,7 +294,7 @@
                     &copy; 2023. All Rights Reserved.
                     </div>
                     <div class="credits text-secondary text-center text-md-start mt-2 fs-7">
-                        Built by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none">Cruncy Prajna Dick</a></span>
+                        Built by <a href="https://bootstrapbrain.com/" class="link-secondary text-decoration-none">Prajna</a></span>
                     </div>
                 </div>
 
